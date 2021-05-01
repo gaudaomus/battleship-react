@@ -1,5 +1,3 @@
-"use strict";
-
 const Ship = () => {
   let position = [];
   let positionHit = [];
@@ -83,21 +81,20 @@ const Gameboard = () => {
 };
 
 const Player = (enemyBoard) => {
-  let activeTurn = false;
 
   const fireShot = (shot) => {
     if (
-      activeTurn === true &&
       !(enemyBoard.hitShots.indexOf(shot) >= 0) &&
       !(enemyBoard.missedShots.indexOf(shot) >= 0)
     ) {
       enemyBoard.receiveAttack(shot);
+      return true;
     } else {
-      fireShot();
+      return false;
     }
   };
 
-  return { fireShot, activeTurn };
+  return { fireShot };
 };
 
 export { Ship, Gameboard, Player };

@@ -1,4 +1,4 @@
-import { Ship, Gameboard } from "./index";
+import { Gameboard } from "./factories";
 
 test("all ships sunk", () => {
   const myBoard = Gameboard();
