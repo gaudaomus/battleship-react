@@ -12,7 +12,7 @@ const ComputerBattleground = (props) => {
         {gridArray.map((index) => {
           if (shipPositions.indexOf(index) >= 0) {
             return (
-              <div className="grid ship" key={index} data-key={index}></div>
+              <div className="grid" key={index} data-key={index}></div>
             );
           } else {
             return <div className="grid" key={index} data-key={index}></div>;
