@@ -1,12 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
-const PlayerBattleground = (props) => {
-  
+const ComputerBattleground = (props) => {
+  const shipPositions = props.board.randomizeShips(1, 64);
+
   const gridArray = [...Array(65).keys()].slice(1);
-
-  const shipOnePosition = [1,2,3,4];
-  const shipPositions = [].concat(shipOnePosition);
-  props.board.shipOne.setPosition(shipOnePosition);
 
   return (
     <div className="Battlefield">
@@ -26,4 +23,4 @@ const PlayerBattleground = (props) => {
   );
 };
 
-export default PlayerBattleground;
+export default ComputerBattleground;

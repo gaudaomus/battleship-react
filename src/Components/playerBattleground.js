@@ -1,12 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 const PlayerBattleground = (props) => {
+  const shipPositions = props.board.randomizeShips(65, 128);
 
   const gridArray = [...Array(129).keys()].slice(65);
-
-  const shipOnePosition = [65, 66, 67, 68];
-  const shipPositions = [].concat(shipOnePosition);
-  props.board.shipOne.setPosition(shipOnePosition);
 
   return (
     <div className="Battlefield">
